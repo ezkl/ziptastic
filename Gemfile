@@ -1,8 +1,8 @@
 source :rubygems
 
-gem 'sqlite3'
-gem 'multi_json'
+gemspec
 
-group :development, :test do
-  gem 'rspec'
+group :test do
+  gem 'rake'
 end
+

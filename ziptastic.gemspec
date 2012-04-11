@@ -14,4 +14,7 @@ Gem::Specification.new do |gem|
   gem.name          = "ziptastic"
   gem.require_paths = ["lib"]
   gem.version       = Ziptastic::VERSION
+  
+  gem.add_dependency("sqlite3", "~> 1.3.5")
+  gem.add_development_dependency("rspec", "~> 2.9.0")
 end
