@@ -1,5 +1,5 @@
 # Ziptastic Ruby
-A Ruby port of Thomas Schultz's [Ziptastic](https://github.com/daspecster/ziptastic) zipcode API.
+A simple Ruby port of Thomas Schultz's [Ziptastic](https://github.com/daspecster/ziptastic) zip code API.
 
 ## Installation
 
@@ -20,12 +20,19 @@ To search against the database locally:
 
     require 'ziptastic'
     results = Ziptastic.search("16335")
-    
-An executable is also included that provides a search API via Sinatra:
+      # => [  {:city=>"MEADVILLE", :state=>"PA", :country=>"US"},
+      #       {:city=>"BLOOMING VALLEY", :state=>"PA", :country=>"US"},
+      #       {:city=>"KERRTOWN", :state=>"PA", :country=>"US"} ]
+      
+Local database searches often return multiple results for a single zip code.
+
+Alternatively, an executable is also included that provides a search API via Sinatra:
 
     $ ziptastic
     $ curl http://localhost:5678?zip=16335
-    # => {"city":"MEADVILLE","state":"PA","country":"US"}
+      # => {"city":"MEADVILLE","state":"PA","country":"US"}
+
+The web API is compatible with the [example JS script](http://daspecster.github.com/ziptastic/demo.html) provided by Thomas Schultz. You'll just need to update the client URL.
 
 ## Contributing
 
