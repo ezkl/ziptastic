@@ -1,6 +1,5 @@
-# Ziptastic
-
-TODO: Write a gem description
+# Ziptastic Ruby
+A Ruby port of Thomas Schultz's [Ziptastic](https://github.com/daspecster/ziptastic) zipcode API.
 
 ## Installation
 
@@ -17,8 +16,16 @@ Or install it yourself as:
     $ gem install ziptastic
 
 ## Usage
+To search against the database locally:
 
-TODO: Write usage instructions here
+    require 'ziptastic'
+    results = Ziptastic.search("16335")
+    
+An executable is also included that provides a search API via Sinatra:
+
+    $ ziptastic
+    $ curl http://localhost:5678?zip=16335
+    # => {"city":"MEADVILLE","state":"PA","country":"US"}
 
 ## Contributing
 
